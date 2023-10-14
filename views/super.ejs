@@ -1,0 +1,61 @@
+<div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+    <div class="ps-3">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-0 p-0">
+                <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">Super Computer</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+
+
+<div class="col-xl-9">
+    <div class="card">
+        <div class="card-body">
+
+            <div class="mb-5 mt-3">
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" value="" id="approveSuperComputer">
+                    <label class="form-check-label" for="approveSuperCompute">
+                        <!-- Super Computer hizmetine onay veriyorum -->
+                        I approve participation in the Super Computer Service
+                    </label>
+                </div>
+            </div>
+
+            <div class="mb-2">
+                <label for="rangeCpu" class="form-label">
+                    <!-- CPU Kaynak Kullanımı(1core-128core) -->
+                    CPU Usage (1core-128core)
+                </label>
+
+                <div class="d-flex justify-content-between">
+
+                    <div class="p-1">
+                        1 Core
+                    </div>
+
+                    <div class="p-1">
+                        128 Core
+                    </div>
+                </div>
+                <input type="range" class="form-range" id="rangeCpu" min="1" max="128" oninput="showRangeValue(this.value)" onchange="showRangeValue(this.value)">
+            </div>
+            <div class="mb-5">
+                <h5> <span id="selectedCpuRangeValue" class="badge bg-warning text-dark"></span> </h5>
+            </div>
+            <div class="mb-3">
+                <button id="saveSuperComputer" class="btn btn-light" type="button">Save Changes</button>
+                <button id="processingSuperComputer" class="btn btn-light d-none" type="button" disabled>
+                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                     Processing...
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,20 @@
+{
+    "name": "dats-web",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "nodemon app.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "dotenv": "^16.0.3",
+        "ejs": "^3.1.9",
+        "ethers": "^6.3.0",
+        "express": "^4.18.2",
+        "express-ejs-layouts": "^2.5.1",
+        "nodemon": "^2.0.22"
+    }
+}

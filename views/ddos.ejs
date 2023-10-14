@@ -1,0 +1,62 @@
+<div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+    <div class="ps-3">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-0 p-0">
+                <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">DDos Test</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+
+
+<div class="col-xl-9">
+
+    <div class="card">
+        <div class="card-body">
+
+            <div class="mb-5 mt-3">
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" value="" id="approveDdosService">
+                    <label class="form-check-label" for="approveDdosService">
+                        <!-- DDos Test hizmeti katılımına onay veriyorum -->
+                        I approve participation in the DDOS Test service
+                    </label>
+                </div>
+            </div>
+
+            <div class="mb-2">
+                <label for="rangeMbit" class="form-label">
+                    <!-- İnternet Trafiği Ölçeği(1mbit-128mbit) -->
+                    Internet Traffic Scale (1mbit-128mbit)
+                </label>
+
+                <div class="d-flex justify-content-between">
+
+                    <div class="p-1">
+                        1 mbit
+                    </div>
+
+                    <div class="p-1">
+                        128 mbit
+                    </div>
+                </div>
+                <input type="range" class="form-range" id="rangeMbit" min="1" max="128" oninput="showRangeValue(this.value)" onchange="showRangeValue(this.value)">
+            </div>
+            <div class="mb-5">
+                <h5> <span id="selectedMbitRangeValue" class="badge bg-warning text-dark"></span> </h5>
+            </div>
+            <div class="mb-3">
+                <button id="saveDdos" class="btn btn-light" type="button">Save Changes</button>
+                <button id="processingDdos" class="btn btn-light d-none" type="button" disabled>
+                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                     Processing...
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+</div>

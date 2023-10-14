@@ -1,0 +1,28 @@
+{{- if .Values.ingress.enabled -}}
+{{- $fullName := include "dats-web.fullname" . -}}
+{{- $svcPort := .Values.service.port -}}
+{{- $namespace := .Release.Namespace -}}
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: {{ .Release.Name }}-{{  $namespace }}-ingress-route
+spec:
+  entryPoints:
+    - web
+    - websecure
+  routes:
+  {{- range .Values.ingress.hosts }}
+  {{- $host := .host -}}
+  {{- range .paths }}
+  - match: Host(`{{ $host }}`)
+    kind: Rule
+    priority: 2
+    services:
+      - kind: Service
+        namespace: {{ $namespace }}
+        passHostHeader: true
+        name: {{ $fullName }}
+        port: {{ $svcPort }}
+  {{ end }}
+  {{ end }}
+{{- end }}
