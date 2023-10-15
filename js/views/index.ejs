@@ -1,0 +1,239 @@
+<div class="row row-cols-1 row-cols-lg-2 row-cols-xl-4">
+
+    <div class="col">
+        <div class="card radius-10">
+            <div class="card-body">
+                <div class="d-flex align-items-center">
+                    <div>
+                        <p class="mb-0">Earnings</p>
+                        <h4 class="my-1">$N/A</h4>
+                        <p class="mb-0 font-13"><i class='bx bxs-up-arrow align-middle'></i>$N/A Last 1 Week
+                        </p>
+                    </div>
+                    <div class="widgets-icons ms-auto"><i class='bx bxs-wallet'></i>
+                    </div>
+                </div>
+                <div id="chart1"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="card radius-10">
+            <div class="card-body">
+                <div class="d-flex align-items-center">
+                    <div>
+                        <p class="mb-0">Completed Tasks</p>
+                        <h4 class="my-1">N/A</h4>
+                        <p class="mb-0 font-13"><i class='bx bxs-up-arrow align-middle'></i>N/A Tasks - Last 1 Week</p>
+                    </div>
+                    <div class="widgets-icons ms-auto"><i class='bx bxs-group'></i>
+                    </div>
+                </div>
+                <div id="chart2"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-12">
+        <div class="card radius-10">
+            <div class="card-body">
+                <div class="d-flex align-items-center">
+                    <div>
+                        <p class="mb-0">Pending Tasks</p>
+                        <h4 class="my-1">N/A</h4>
+                        <p class="mb-0 font-13"><i class='bx bxs-down-arrow align-middle'></i>Next 1 Week
+                        </p>
+                    </div>
+                    <div class="widgets-icons ms-auto"><i class='bx bxs-binoculars'></i>
+                    </div>
+                </div>
+                <div id="chart3"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-12">
+        <div class="card radius-10">
+            <div class="card-body">
+                <div class="d-flex align-items-center">
+                    <div>
+                        <p class="mb-0">Participation Rate</p>
+                        <h4 class="my-1">N/A</h4>
+                        <p class="mb-0 font-13"><i class='bx bxs-down-arrow align-middle'></i>Last 12 months statistics
+                        </p>
+                    </div>
+                    <div class="widgets-icons ms-auto"><i class='bx bx-pie-chart'></i>
+                    </div>
+                </div>
+                <div id="chart3_1"></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="row row-cols-1 row-cols-xl-2">
+    
+
+    <div class="col d-flex">
+        <div class="card radius-10 w-100">
+            <div class="card-body">
+                <div class="d-flex align-items-center">
+                    <div>
+                        <h5 class="mb-1">
+                            <!-- Ay bazında görev katılımı -->
+                        </h5>
+                        <p class="mb-0 font-13">
+                            <!-- Son 30 gün kazançları -->
+                        </p>
+                    </div>
+                    <div class="font-22 ms-auto">
+                        <button id="mintNft" class="btn btn-sm btn-light px-5 radius-30" type="button"><i
+                                class='bx bx-coin'></i> Mint NFT
+                        </button>
+                        <button id="processingMintNft" class="btn btn-light d-none" type="button" disabled>
+                            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                             Processing...
+                        </button>
+                    </div>
+                </div>
+
+                <div id="nftImageDiv" class="text-center">
+                    <img id="nftImage" src="https://nftcrypto.io/wp-content/uploads/2023/05/NFTs-for-Dummies-Nftcrypto.io_.png" class="rounded-circle" alt="" width="400">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col d-flex">
+
+
+        <div class="card radius-10 w-100">
+            <div class="card-body">
+                <div class="d-flex align-items-center">
+                    <div>
+                        <h5 class="mb-1">Notifications</h5>
+                        <p class="mb-0 font-13"><i class='bx bxs-calendar'></i>
+                            <!-- Son 30 gün bildirimleri -->
+                            Last 30 days notifications
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="table-responsive mt-4">
+                    <table class="table align-middle mb-0 table-hover">
+                        <tbody>
+
+                            <tr>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <div class="ms-2">
+                                            <h6 class="mb-1 font-14">Notification Title</h6>
+                                            <p class="mb-0 font-13">
+                                                Notification short description.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>2 Days</td>
+                                <td>
+                                    <div class="badge rounded-pill bg-light text-white w-100">Completed
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <div class="ms-2">
+                                            <h6 class="mb-1 font-14">Notification Title</h6>
+                                            <p class="mb-0 font-13">
+                                                Notification short description.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>2 Days</td>
+                                <td>
+                                    <div class="badge rounded-pill bg-light text-white w-100">Completed
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <div class="ms-2">
+                                            <h6 class="mb-1 font-14">Notification Title</h6>
+                                            <p class="mb-0 font-13">
+                                                Notification short description.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>2 Days</td>
+                                <td>
+                                    <div class="badge rounded-pill bg-light text-white w-100">Completed
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <div class="ms-2">
+                                            <h6 class="mb-1 font-14">Notification Title</h6>
+                                            <p class="mb-0 font-13">
+                                                Notification short description.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>2 Days</td>
+                                <td>
+                                    <div class="badge rounded-pill bg-light text-white w-100">Completed
+                                    </div>
+                                </td>
+                            </tr>
+
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xl-8 d-flex">
+        <div class="card radius-10 w-100">
+
+            <div class="card">
+                <div class="card-body">
+                    <div id="world-map-markers" style="height: 300px"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="col-xl-4">
+
+        <div class="card radius-10 overflow-hidden">
+            <div class="card-body">
+                <div class="d-flex align-items-center">
+                    <div class="">
+                        <p class="mb-1">Progress Payments</p>
+                        <h4 class="mb-0">N/A%</h4>
+                    </div>
+
+                </div>
+            </div>
+            <div id="chart13"></div>
+        </div>
+
+    </div>
+
+</div>
