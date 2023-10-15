@@ -6,24 +6,7 @@ use solana_program::{
     msg,
     program_error::ProgramError,
     pubkey::Pubkey,
-    sysvar::{rent::Rent, Sysvar},
 };
-
-use solana_program::program;
-use solana_program::program::invoke;
-use solana_program::program_error::PrintProgramError;
-use solana_program::program_pack::{IsInitialized, Pack};
-use solana_program::solana_entrypoint;
-use solana_program::system_instruction;
-use solana_program::sysvar;
-use solana_program::instruction;
-use solana_program::bpf_loader;
-use solana_program::bpf_loader_upgradeable;
-use solana_program::sysvar;
-use solana_program::clock::Clock;
-
-use arrayref::{array_mut_ref, array_ref, array_refs, mut_array_refs};
-use std::convert::TryInto;
 
 solana_program::declare_id!("DatsC9WF3T6j3qPz6MNLm8jsBbthxvixXJkjzXzegbzB");
 
@@ -131,11 +114,11 @@ impl DatsContract {
         ) = array_refs![
             data,
             32,
-            8,  
-            8,  
-            8,  
-            8,  
-            8,  
+            8,
+            8,
+            8,
+            8,
+            8,
         ];
 
         let owner = Pubkey::new_from_array(*owner);
@@ -156,10 +139,10 @@ impl DatsContract {
         for _ in 0..ddoses_len {
             let (id, user, is_approve, traffic_scale) = array_refs![
                 &rest[offset..],
-                8, 
-                32, 
-                1, 
-                1,  
+                8,
+                32,
+                1,
+                1,
             ];
 
             let ddos = DDos {
@@ -174,12 +157,12 @@ impl DatsContract {
         }
 
         for _ in 0..supers_len {
-            let (id, user, is_approve, cpu_value) = array_refs![
+            let (id, user, is_approve, cpu_value) = arrayrefs![
                 &rest[offset..],
-                8, 
-                32, 
-                1,  
-                1,  
+                8,
+                32,
+                1,
+                1,
             ];
 
             let super_computer = SuperComputer {
@@ -194,15 +177,15 @@ impl DatsContract {
         }
 
         for _ in 0..cybers_len {
-            let (id, user, is_approve, web_security, server_security, ransomware_research, malware_research) = array_refs![
+            let (id, user, is_approve, web_security, server_security, ransomware_research, malware_research) = arrayrefs![
                 &rest[offset..],
-                8,  
-                32, 
-                1,  
-                1,  
-                1,  
-                1,  
-                1,  )
+                8,
+                32,
+                1,
+                1,
+                1,
+                1,
+                1,
             ];
 
             let cyber_security = CyberSecurity {
@@ -220,16 +203,16 @@ impl DatsContract {
         }
 
         for _ in 0..vulnerabilities_len {
-            let (id, user, is_approve, web_penetration, server_penetration, scada_penetration, blockchain_penetration, contract_penetration) = array_refs![
+            let (id, user, is_approve, web_penetration, server_penetration, scada_penetration, blockchain_penetration, contract_penetration) = arrayrefs![
                 &rest[offset..],
-                8,  
-                32, 
-                1,  
-                1,  
-                1,  
-                1,  
-                1, 
-                1,  
+                8,
+                32,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
             ];
 
             let vulnerability = Vulnerability {
@@ -248,11 +231,11 @@ impl DatsContract {
         }
 
         for _ in 0..blockchains_len {
-            let (id, user, approve_attack_prevention) = array_refs![
+            let (id, user, approve_attack_prevention) = arrayrefs![
                 &rest[offset..],
-                8,  
-                32, 
-                1,  
+                8,
+                32,
+                1,
             ];
 
             let blockchain = Blockchain {
