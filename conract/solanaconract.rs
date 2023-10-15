@@ -1,14 +1,15 @@
+use arrayref::array_refs;
 use solana_program::{
     account_info::next_account_info,
     account_info::AccountInfo,
-    entrypoint,
     entrypoint::ProgramResult,
     msg,
     program_error::ProgramError,
     pubkey::Pubkey,
 };
 
-solana_program::declare_id!("DatsC9WF3T6j3qPz6MNLm8jsBbthxvixXJkjzXzegbzB");
+
+solana_program::declare_id!("7gJNT94qGtsuGUqBMZmismRrNfQaFEAHoW18o6TiaXvP");
 
 #[derive(Debug, Default, Clone, Copy, PartialEq, Eq)]
 pub struct DDos {
@@ -70,6 +71,7 @@ fn process_instruction(
         return Err(ProgramError::IncorrectProgramId);
     }
 
+    // The missing import is for the 'load' method from DatsContract.
     let mut dats_contract = DatsContract::load(owner_account)?;
 
     let all_ddos = dats_contract.get_all_user_ddos_settings()?;
@@ -157,7 +159,7 @@ impl DatsContract {
         }
 
         for _ in 0..supers_len {
-            let (id, user, is_approve, cpu_value) = arrayrefs![
+            let (id, user, is_approve, cpu_value) = array_refs![
                 &rest[offset..],
                 8,
                 32,
@@ -177,7 +179,7 @@ impl DatsContract {
         }
 
         for _ in 0..cybers_len {
-            let (id, user, is_approve, web_security, server_security, ransomware_research, malware_research) = arrayrefs![
+            let (id, user, is_approve, web_security, server_security, ransomware_research, malware_research) = array_refs![
                 &rest[offset..],
                 8,
                 32,
@@ -203,7 +205,7 @@ impl DatsContract {
         }
 
         for _ in 0..vulnerabilities_len {
-            let (id, user, is_approve, web_penetration, server_penetration, scada_penetration, blockchain_penetration, contract_penetration) = arrayrefs![
+            let (id, user, is_approve, web_penetration, server_penetration, scada_penetration, blockchain_penetration, contract_penetration) = array_refs![
                 &rest[offset..],
                 8,
                 32,
@@ -231,7 +233,7 @@ impl DatsContract {
         }
 
         for _ in 0..blockchains_len {
-            let (id, user, approve_attack_prevention) = arrayrefs![
+            let (id, user, approve_attack_prevention) = array_refs![
                 &rest[offset..],
                 8,
                 32,
