@@ -1,0 +1,10 @@
+.github
+.next
+.parcel-cache
+.swc
+
+docs
+lib
+build
+dist
+out
